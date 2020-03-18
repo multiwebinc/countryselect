@@ -16,7 +16,8 @@ class CountrySelect extends ComponentBase
 
     public function onRun()
     {
-        $this->page['countries'] = CountryList::getCountries();
+        $locale = ($this->page['activeLocale']) ?? null;
+        $this->page['countries'] = CountryList::getCountries($locale);
 
         $session_key = $this->property('defaultValueSessionKey');
         if ($session_key && Session::get($session_key)) {
