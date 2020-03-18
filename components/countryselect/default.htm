@@ -1,0 +1,10 @@
+<select name="{{ __SELF__.property('inputName') }}" {% if __SELF__.property('inputId') is not empty %}id="{{ __SELF__.property('inputId') }}"{% endif %} class="{{ __SELF__.property('inputClass') }}" {% if __SELF__.property('inputRequired') %}required="required"{% endif %}>
+    <option value="" class="select-placeholder" disabled {% if countryValue is empty %}selected="selected"{% endif %}>
+        ({{ 'Choose' }})
+    </option>
+    {% for country in countries %}
+        <option value="{{ country.alpha2 }}" {% if countryValue == country.alpha2 %}selected="selected"{% endif %}>
+            {{ country.name }}
+        </option>
+    {% endfor %}
+</select>
