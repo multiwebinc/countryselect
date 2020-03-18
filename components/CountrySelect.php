@@ -17,10 +17,10 @@ class CountrySelect extends ComponentBase
     public function onRun()
     {
         if ($this->property('defaultLanguage') == 'auto') {
-            $locale = ($this->page['activeLocale']) ?? null;
+            $locale = ($this->page['activeLocale']) ?? 'en';
         }
         else {
-            $locale = $this->property('defaultLanguage');
+            $locale = ($this->property('defaultLanguage')) ?? 'en';
         }
         $this->page['countries'] = CountryList::getCountries($locale);
 
