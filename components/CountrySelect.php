@@ -16,7 +16,12 @@ class CountrySelect extends ComponentBase
 
     public function onRun()
     {
-        $locale = ($this->page['activeLocale']) ?? null;
+        if ($this->property('defaultLanguage') == 'auto') {
+            $locale = ($this->page['activeLocale']) ?? null;
+        }
+        else {
+            $locale = $this->property('defaultLanguage');
+        }
         $this->page['countries'] = CountryList::getCountries($locale);
 
         $session_key = $this->property('defaultValueSessionKey');
@@ -72,6 +77,39 @@ class CountrySelect extends ComponentBase
                 'type'              => 'string',
                 'showExternalParam' => false,
                 'required'          => false,
+            ],
+            'defaultLanguage' => [
+                'title'             => 'multiwebinc.countryselect::lang.components.countryselect.defaultLanguageTitle',
+                'description'       => 'multiwebinc.countryselect::lang.components.countryselect.defaultLanguageDescription',
+                'type'              => 'dropdown',
+                'options'           => [
+                    'auto' => 'multiwebinc.countryselect::lang.strings.autoDetect',
+                    'ar' => 'Arabic',
+                    'cn' => 'Chinese',
+                    'cs' => 'Czech',
+                    'da' => 'Danish',
+                    'de' => 'German',
+                    'el' => 'Greek',
+                    'en' => 'English (default)',
+                    'es' => 'Spanish',
+                    'et' => 'Estonian',
+                    'fr' => 'French',
+                    'hu' => 'Hungarian',
+                    'it' => 'Italian',
+                    'ja' => 'Japanese',
+                    'lt' => 'Lithuanian',
+                    'nl' => 'Dutch',
+                    'no' => 'Norwegian',
+                    'pl' => 'Polish',
+                    'pt' => 'Portuguese',
+                    'ro' => 'Romanian',
+                    'ru' => 'Russian',
+                    'sk' => 'Slovak',
+                    'th' => 'Thai',
+                    'uk' => 'Ukranian',
+                ],
+                'showExternalParam' => false,
+                'required'          => true,
             ],
         ];
     }

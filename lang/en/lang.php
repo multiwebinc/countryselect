@@ -27,9 +27,13 @@ return [
 
             'selectedValueTitle' => 'Selected value',
             'selectedValueDescription' => 'Country selected by default. Use 2-character country code. Leave blank for no default selected.',
+
+            'defaultLanguageTitle' => 'Default language',
+            'defaultLanguageDescription' => 'Note: "Auto detect" requires the "Translate" plugin to be installed.',
         ],
     ],
     'strings' => [
         'choose' => 'Choose',
+        'autoDetect' => 'Auto detect',
     ],
 ];
