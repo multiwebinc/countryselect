@@ -1,0 +1,8 @@
+{
+    "name": "multiwebinc/wn-countryselect-plugin",
+    "type": "winter-plugin",
+    "description": "Country Select plugin for Winter CMS",
+    "homepage": "https://github.com/multiwebinc/countryselect",
+    "keywords": ["winter", "wintercms", "builder"],
+    "license": "MIT" 
+}
